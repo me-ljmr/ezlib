@@ -59,6 +59,6 @@ public class CategoryController {
          }catch(EZException ex){
              
          }
-        return index();
+        return new ModelAndView("redirect:/categories");
     }
 }
