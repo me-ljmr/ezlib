@@ -22,6 +22,11 @@ public class Book {
     private ArrayList<Author> authors;
     private int pages;
     private ArrayList<Tag> tags;
+    
+    private Long categoryId;
+    private Long publisherId;
+    private Long authorId;
+    
 
     public String getISBN() {
         return ISBN;
@@ -139,7 +144,50 @@ public class Book {
     private double price;
     private int year;
     private Category category;
+   
     private boolean allowedForReservation;
+
+    /**
+     * @return the categoryId
+     */
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    /**
+     * @param categoryId the categoryId to set
+     */
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    /**
+     * @return the publisherId
+     */
+    public Long getPublisherId() {
+        return publisherId;
+    }
+
+    /**
+     * @param publisherId the publisherId to set
+     */
+    public void setPublisherId(Long publisherId) {
+        this.publisherId = publisherId;
+    }
+
+    /**
+     * @return the authorId
+     */
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    /**
+     * @param authorId the authorId to set
+     */
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
+    }
     
     
 }

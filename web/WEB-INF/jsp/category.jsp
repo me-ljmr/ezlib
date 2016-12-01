@@ -2,10 +2,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
 <html>
     <head>  
-            
-         <%@include file="springvars.jsp" %> 
-         <title>ezLib - Add a new category</title>
-         <%@include file="links.jsp" %>
+
+        <%@include file="springvars.jsp" %> 
+        <title>ezLib - Add a new category</title>
+        <%@include file="links.jsp" %>
     </head>
     <body  style="background:url(${bookCover})">
         <div class="background-overlay">
@@ -21,23 +21,23 @@
                                     <table>
                                         <tr><th>Description</th>
                                             <td>
-                                               <form:input path="description" />
+                                                <form:input path="description" />
                                             </td>
                                         </tr> 
                                         <tr>
                                             <th>Icon</th>
                                             <td>
-                                            <form:input path="icon" />
+                                                <form:input path="icon" />
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan = 2>
-                                                
+
                                                 <input type="submit" name="submit" >
                                             </td>
                                         </tr>
                                     </table>
-                                 
+
                                 </form:form>
                             </div>
                         </div>
@@ -47,4 +47,3 @@
         </div>
     </body>
 </html>
-                    
