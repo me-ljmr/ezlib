@@ -45,7 +45,7 @@ public class PublisherController {
          return (new ModelAndView("publisher")).addObject("pub",pub);
          
     } 
-    @RequestMapping(value="update", method=RequestMethod.POST)
+    @RequestMapping(value="/updatePublisher", method=RequestMethod.POST)
     public String update(@ModelAttribute("publisherForm")Publisher pub){
         dbq = null;
         return "test";

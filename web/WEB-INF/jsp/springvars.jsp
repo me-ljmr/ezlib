@@ -8,3 +8,4 @@
 <spring:url value="/assets/img/logo.png" var="logoUrl" />
 <spring:url value="/assets/img/book-cover.jpg" var="bookCover" />
 <spring:url value="Categories" var="categoriesTitle" />
+<spring:url value="Publishers" var="publishersTitle" />

@@ -5,7 +5,7 @@
             
          <%@include file="springvars.jsp" %> 
          <title>ezLib - Add a new category</title>
-         <%@include file="links.jspb" %>
+         <%@include file="links.jsp" %>
     </head>
     <body  style="background:url(${bookCover})">
         <div class="background-overlay">
@@ -21,7 +21,7 @@
                                     <table>
                                         <tr><th>Publisher Name : </th>
                                             <td>
-                                               <form:input path="publisher_name" />
+                                               <form:input path="publisherName" />
                                             </td>
                                         </tr> 
                                         
@@ -33,14 +33,14 @@
                                         
                                          <tr><th>Contact Person</th>
                                             <td>
-                                               <form:input path="contact_person" />
+                                               <form:input path="contactPerson" />
                                             </td>
                                         </tr> 
                                         
                                         <tr>
                                             <th>Contact Number</th>
                                             <td>
-                                            <form:input path="contact_number" />
+                                            <form:input path="contactNumber" />
                                             </td>
                                         </tr>
                                         <tr>
