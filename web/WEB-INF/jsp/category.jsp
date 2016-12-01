@@ -4,7 +4,7 @@
     <head>  
             
          <%@include file="springvars.jsp" %> 
-         <title>ezLib - Add a new category</title>
+         <title>ezLib - Category</title>
          <%@include file="links.jsp" %>
     </head>
     <body  style="background:url(${bookCover})">
@@ -17,23 +17,25 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="row">
-                                <form:form action="save" method="post" commandName="categoryForm">
+                                
+                                <form:form action="/ezLib/category/save" method="post" commandName="categoryForm">
                                     <table>
                                         <tr><th>Description</th>
                                             <td>
+                                                <form:hidden path="categoryId" />
                                                <form:input path="description" />
                                             </td>
                                         </tr> 
                                         <tr>
                                             <th>Icon</th>
                                             <td>
-                                            <form:input path="icon" />
+                                            <form:input path="icon.iconNumber" />
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan = 2>
                                                 
-                                                <input type="submit" name="submit" >
+                                                <input type="submit" name="submit" value="Save" >
                                             </td>
                                         </tr>
                                     </table>

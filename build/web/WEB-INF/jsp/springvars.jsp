@@ -5,6 +5,7 @@
 --%>
 
 <spring:url value="/assets/css/min.css" var="mainCss" />
+<spring:url value="/assets/icons/" var="iconFolder" />
 <spring:url value="/assets/img/logo.png" var="logoUrl" />
 <spring:url value="/assets/img/book-cover.jpg" var="bookCover" />
 <spring:url value="Categories" var="categoriesTitle" />
