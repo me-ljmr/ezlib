@@ -64,19 +64,19 @@ public class CategoryDAO {
              pstmt = con.prepareStatement("select cat.*,icn.title as icon_title,icn.file_name from ezlib_categories cat inner join ezlib_icons icn on cat.icon_number =icn.icon_number where category_id=?");
              pstmt.setLong(1, id);
              Icon icon=null; 
-             ResultSet rs =pstmt.executeQuery(); 
-            c = new Category();
-            c.setCategoryId(id);
-            while(rs.next()){
-                c.setDescription(rs.getString("description")); 
-                icon = new Icon();
-                icon.setFileName(rs.getString("file_name"));
-                icon.setIconNumber(rs.getInt("icon_number"));
-                icon.setIconTitle(rs.getString("icon_title"));
+            try (ResultSet rs = pstmt.executeQuery()) {
+                c = new Category();
+                c.setCategoryId(id);
+                if(rs.next()){
+                    c.setDescription(rs.getString("description"));
+                    icon = new Icon();
+                    icon.setFileName(rs.getString("file_name"));
+                    icon.setIconNumber(rs.getInt("icon_number"));
+                    icon.setIconTitle(rs.getString("icon_title"));
 
-                c.setIcon(icon);
-            }  
-             rs.close();
+                    c.setIcon(icon);
+                }
+            }
              pstmt.close(); 
              
          } catch (SQLException ex) {
@@ -112,6 +112,22 @@ public class CategoryDAO {
              pstmt.setString(1,c.getDescription());
              pstmt.setLong(2,c.getIcon().getIconNumber());
              pstmt.setLong(3,c.getCategoryId());
+              pstmt.executeUpdate();
+              
+              
+             pstmt.close(); 
+             
+         } catch (SQLException ex) {
+               throw new ezlib.exception.EZException(ex.getMessage());
+         } 
+    }
+    public void deleteCategory(long id) throws EZException{
+         
+         try {
+             PreparedStatement pstmt;
+             pstmt = con.prepareStatement("delete from ezlib_categories where category_id=?");
+ 
+             pstmt.setLong(1,id);
               pstmt.executeUpdate();
               
               
