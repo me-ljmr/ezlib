@@ -5,8 +5,12 @@
  */
 package ezlib.controller;
 
+import ezlib.beans.Author;
 import ezlib.beans.Publisher;
+import ezlib.data.CategoryDAO;
+import ezlib.data.DB;
 import ezlib.data.DbQueries;
+import ezlib.data.PublisherDAO;
 import ezlib.exception.EZException;
 import java.util.List;
 import org.springframework.stereotype.Controller;
@@ -23,13 +27,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PublisherController {
     DbQueries dbq ;
-     
+    
+     PublisherDAO pdao;
+    
     
     @RequestMapping("/publishers") 
-    public ModelAndView index(){        
-        dbq = null;
-         dbq = new DbQueries();
-        List<Publisher> pubs = dbq.getPublishers();
+    public ModelAndView index() throws EZException{ 
+            pdao = new PublisherDAO(DB.getConnection());
+      
+        List<Publisher> pubs = pdao.getPublishers();
          
         return (new ModelAndView("publishers")).addObject("pubs", pubs);
     }
@@ -41,7 +47,7 @@ public class PublisherController {
     }
     @RequestMapping("/publisher/{id}")
     public ModelAndView detail(@PathVariable int id){
-         Publisher pub = new DbQueries().getPublisher(id);
+         Publisher pub = pdao.getPublisher(id);
          return (new ModelAndView("publisher")).addObject("pub",pub);
          
     } 

@@ -25,16 +25,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class CategoryController {
     CategoryDAO cdao ;
      public CategoryController() throws EZException{
-        cdao = new CategoryDAO(DB.getConnection());
+        
           
      }
     
     @RequestMapping("/categories") 
     public ModelAndView index() throws EZException{        
-         
-         
+         cdao = new CategoryDAO(DB.getConnection());
         List<Category> cats = cdao.getCategories();
-         cdao=null;
+      // System.out.println("dvfeferfef******************");
+        cdao=null;
         return (new ModelAndView("categories")).addObject("cats", cats);
     }
     @RequestMapping( value="/category/edit/{id}", method=RequestMethod.GET)
