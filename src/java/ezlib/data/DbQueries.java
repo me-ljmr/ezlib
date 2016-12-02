@@ -8,7 +8,7 @@ package ezlib.data;
 import ezlib.beans.Author;
 import ezlib.beans.Book;
 import ezlib.beans.Category;
-import ezlib.beans.Publisher;
+import ezlib.beans.Icon;
 import ezlib.exception.EZException;
 import java.io.Serializable;
 import java.sql.ResultSet;
