@@ -131,6 +131,17 @@
 
                                         </form:select>
                                     </td>
+                                    
+                                     <tr>
+                                    <td>Book Type : </td>
+                                    <td><form:select  path="bookType">
+                                            <form:option value="0"/>Pls select one
+
+                                            <form:option value='1'>Ebook</form:option>
+                                            <form:option value='0'>Paperback</form:option>
+
+                                        </form:select>
+                                    </td>
 
 
 

@@ -130,10 +130,6 @@ public class BookDAO {
                  pstmtAuthor.setLong(2, i);
                   pstmtAuthor.executeQuery();
             }
-
-            //     for(<String> i = someList.iterator(); i.hasNext(); ) {
-            //String item = i.next();
-            //System.out.println(item);
            
 
         } catch (SQLException ex) {
