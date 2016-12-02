@@ -223,7 +223,7 @@ public class DbQueries implements Serializable{
 "   values (?,?);\n" +
 "   ");
             pstmtAuthor.setString(1,b.getISBN());
-            pstmtAuthor.setLong(2,b.getAuthorId());
+          //  pstmtAuthor.setLong(2,b.getAuthorId());
            
             pstmtAuthor.executeQuery();
            

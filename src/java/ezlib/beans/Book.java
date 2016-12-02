@@ -2,6 +2,7 @@ package ezlib.beans;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,10 +23,11 @@ public class Book {
     private ArrayList<Author> authors;
     private int pages;
     private ArrayList<Tag> tags;
+    private String bookType;
     
     private Long categoryId;
     private Long publisherId;
-    private Long authorId;
+    private List<Long> authorId;
     
 
     public String getISBN() {
@@ -178,15 +180,29 @@ public class Book {
     /**
      * @return the authorId
      */
-    public Long getAuthorId() {
+    public List<Long> getAuthorId() {
         return authorId;
     }
 
     /**
      * @param authorId the authorId to set
      */
-    public void setAuthorId(Long authorId) {
+    public void setAuthorId(List<Long> authorId) {
         this.authorId = authorId;
+    }
+
+    /**
+     * @return the bookType
+     */
+    public String getBookType() {
+        return bookType;
+    }
+
+    /**
+     * @param bookType the bookType to set
+     */
+    public void setBookType(String bookType) {
+        this.bookType = bookType;
     }
     
     

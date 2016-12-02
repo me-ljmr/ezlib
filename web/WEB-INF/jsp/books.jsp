@@ -21,18 +21,7 @@
                 <%@include file="header.jsp" %>
                 <main>
                     <a href="category/add">Create New</a>
-                    pstmt.setString(1,b.getISBN());
-                    pstmt.setString(2,b.getTitle());
-                    pstmt.setString(3,b.getDescription());
-                    pstmt.setString(4,b.getCoverImage());
-                    pstmt.setLong(5,b.getPublisherId());
-                    pstmt.setInt(6,b.getPages());
-                    pstmt.setInt(7, 0);
-                    pstmt.setDouble(8,b.getPrice());
-                    pstmt.setInt(9,b.getYear());
-                    pstmt.setLong(10,b.getCategoryId());
-                    pstmt.setString(11, Character.toString('e'));
-                    pstmt.setInt(12,2);
+                   
 
                     <table>
                         <tr><th>&nbsp;</th><th>ISBN</th>
@@ -45,17 +34,24 @@
                             <th>Price</th>
                             <th>Published Year</th>
                             <th>Category Id</th>
-                            <th>Description</th>
+                            <th>Book Type</th>
+                            <th>Allowed for reservation</th>
+
                         </tr>
-                        <c:forEach items="${cats}" var="cat"> 
-                            <tr ><td><img src="${iconFolder}${cat.icon.fileName}" /></td><td>${cat.categoryId}</td><td>${cat.description}</td>
-                                <td>
-                                    <form:form action="category/edit/${cat.categoryId}" method="get" commandName="categoryForm">
+                        <c:forEach items="${books}" var="book"> 
+                            <tr ><td>${book.ISBN}</td>
+                                <td>${book.title}</td>
+                            <td>${book.description}</td>
+                            <td>${book.coverImage}</td>
+                            <td>${book.publisherId}</td>
+                            <td>${book.pages}</td>
+                            <td>${book.likes}</td>
+                            <td>${book.price}</td>
+                            <td>${book.year}</td>
+                            <td>${book.categoryId}</td>
+                            <td>${book.bookType}</td>
+                            <td>${book.allowedForReservation}</td>
 
-                                        <input type="submit" value="Modify"   />
-
-                                    </form:form>
-                                </td>
                             </tr>
 
                         </c:forEach>

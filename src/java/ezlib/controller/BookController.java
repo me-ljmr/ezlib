@@ -34,6 +34,15 @@ public class BookController {
     CategoryDAO cdao;
     PublisherDAO pdao;
     AuthorDAO adao;
+    
+    @RequestMapping("/books") 
+    public ModelAndView getBooks() throws EZException{        
+         bdao = new BookDAO(DB.getConnection());
+        List<Book> book = bdao.getBooks();
+        bdao=null;
+        return (new ModelAndView("books")).addObject("books", book);
+
+    }
 
     @RequestMapping("/addBook")
     public ModelAndView index() throws EZException {
@@ -68,7 +77,7 @@ public class BookController {
         } catch (EZException ex) {
             ex.getMessage();
         }
-        return new ModelAndView("redirect:/categories");
+        return new ModelAndView("redirect:/books");
     }
 
 }

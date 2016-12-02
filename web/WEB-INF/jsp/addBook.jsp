@@ -15,32 +15,7 @@
 
         <link type="text/css" rel="stylesheet" href="http://pdflibrary.me/assets/css/min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-        <SCRIPT language="javascript">
-            function add() {
 
-
-                //Create an input type dynamically.
-                var element = document.createElement("select");
-                var subElement = document.createElement("option");
-
-            <c:forEach items= "${aut}" var="aut">
-
-                subElement.setAttribute("value",${aut.firstName} ${aut.lastName});
-            </c:forEach>
-
-
-                //Assign different attributes to the element.
-                element.setAttribute("name", "aut");
-                element.appendChild(subElement);
-
-
-                var foo = document.getElementById("fooBar");
-
-                //Append the element in page (in span).
-                foo.appendChild(element);
-
-            }
-        </SCRIPT>
     </head>
     <body>
         <div class="background-overlay">
@@ -99,7 +74,7 @@
 
                                     <td>Publisher</td>
 
-                                    <td><form:select path="publisherId" >
+                                    <td><form:select  path="publisherId" >
                                             <form:option value="dropdown"/>Pls select one
 
                                             <c:forEach items= "${pubs}" var="pubs">
@@ -118,7 +93,7 @@
 
                                 <tr>
                                     <td>Author Name</td>
-                                    <td><form:select  path="authorId">
+                                    <td><form:select multiple="multiple" path="authorId">
                                             <form:option value="dropdown"/>Pls select one
 
                                             <c:forEach items= "${aut}" var="aut">
@@ -156,9 +131,9 @@
 
                                         </form:select>
                                     </td>
-                                        
-                                        
-                                       
+
+
+
                                 </tr>
 
                                 <tr>
