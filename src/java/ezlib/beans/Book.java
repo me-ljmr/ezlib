@@ -132,11 +132,11 @@ public class Book {
         this.category = category;
     }
 
-    public boolean isAllowedForReservation() {
+    public int getAllowedForReservation() {
         return allowedForReservation;
     }
 
-    public void setAllowedForReservation(boolean allowedForReservation) {
+    public void setAllowedForReservation(int allowedForReservation) {
         this.allowedForReservation = allowedForReservation;
     }
     private int likes;
@@ -145,7 +145,7 @@ public class Book {
     private int year;
     private Category category;
    
-    private boolean allowedForReservation;
+    private int allowedForReservation;
 
     /**
      * @return the categoryId

@@ -8,11 +8,14 @@ package ezlib.data;
 import ezlib.beans.Author;
 import ezlib.beans.Book;
 import ezlib.beans.Category;
+import ezlib.beans.Icon;
 import ezlib.beans.Publisher;
 import ezlib.exception.EZException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -40,7 +43,7 @@ public class BookDAO {
             pstmt = con.prepareStatement("insert into EZLIB_BOOKS (ISBN,title,description,"
                     + "coverImage,PUBLISHER_ID,pages,likes,price,published_year,category_id,"
                     + "book_Type,allowed_For_Reservation)\n"
-                    + "   values (?,?,?,?,?,?,?,?,?,?,?,?);");
+                    + "   values (?,?,?,?,?,?,?,?,?,?,?,?)");
             pstmt.setString(1,b.getISBN());
             pstmt.setString(2,b.getTitle());
             pstmt.setString(3,b.getDescription());
@@ -52,7 +55,7 @@ public class BookDAO {
             pstmt.setInt(9,b.getYear());
             pstmt.setLong(10,b.getCategoryId());
             pstmt.setString(11, Character.toString('e'));
-            pstmt.setInt(12,2);
+            pstmt.setInt(12,b.getAllowedForReservation());
             
             
 
@@ -61,8 +64,7 @@ public class BookDAO {
             
              PreparedStatement pstmtAuthor;
             pstmtAuthor = con.prepareStatement("insert into EZLIB_BOOK_AUTHORS (isbn,author_id) \n" +
-"   values (?,?);\n" +
-"   ");
+"   values (?,?)\n");
             pstmtAuthor.setString(1,b.getISBN());
             pstmtAuthor.setLong(2,b.getAuthorId());
            
@@ -74,4 +76,6 @@ public class BookDAO {
         }
 
     }
+    
+     
 }

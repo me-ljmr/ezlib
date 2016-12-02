@@ -193,10 +193,7 @@ public class DbQueries implements Serializable{
 
     public void insertBook(Book b) throws EZException{
             
-            //String ISBN, String title, String description, String coverImg, int pages, float price, int pubId, int catId, int pubYear, char bookType, int allowedForReservation, int autId) {
-
-        // List<Author> a=new ArrayList<Author>();
-        // Author aut=null;
+            
         try {
             PreparedStatement pstmt;
             pstmt = con.prepareStatement("insert into EZLIB_BOOKS (ISBN,title,description,"

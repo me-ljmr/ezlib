@@ -24,8 +24,8 @@
                 var subElement = document.createElement("option");
 
             <c:forEach items= "${aut}" var="aut">
-                
-                        subElement.setAttribute("value",${aut.firstName} ${aut.lastName});
+
+                subElement.setAttribute("value",${aut.firstName} ${aut.lastName});
             </c:forEach>
 
 
@@ -53,8 +53,8 @@
 
                 <div class="main" >
                     <form:form method="post" action="saveBook" commandName="addBookCommand"   >
-                    
-                                
+
+
                         <center>
                             <table >
                                 <tr>
@@ -73,17 +73,17 @@
                                     <td><form:textarea id="description"  path="Description"/></td>
 
                                 </tr>
-                                
+
                                 <tr>
                                     <td>Category</td>
                                     <td><form:select path="categoryId"  >
-                                       
-                                           <form:option value="dropdown"/>Pls select one
 
-                                                <c:forEach items= "${cats}" var="cats">
-                                                <form:option value='${cats.description}'/>
+                                            <form:option value="dropdown"/>Pls select one
 
-                                                </c:forEach>
+                                            <c:forEach items= "${cats}" var="cats">
+                                                <form:option  value='${cats.categoryId}'>${cats.description}</form:option>
+
+                                            </c:forEach>
                                         </form:select></td>
 
                                 </tr>
@@ -102,10 +102,10 @@
                                     <td><form:select path="publisherId" >
                                             <form:option value="dropdown"/>Pls select one
 
-                                                <c:forEach items= "${pubs}" var="pubs">
-                                                <form:option value='${pubs.publisherId}'/>${pubs.publisherName}
+                                            <c:forEach items= "${pubs}" var="pubs">
+                                                <form:option value='${pubs.publisherId}'>${pubs.publisherName}</form:option>
 
-                                                </c:forEach>
+                                            </c:forEach>
                                         </form:select></td>
 
                                 </tr>
@@ -121,11 +121,11 @@
                                     <td><form:select  path="authorId">
                                             <form:option value="dropdown"/>Pls select one
 
-                                                <c:forEach items= "${aut}" var="aut">
-                                                <form:option value='${aut.authorId}'/>${aut.firstName} ${aut.lastName}
+                                            <c:forEach items= "${aut}" var="aut">
+                                                <form:option value='${aut.authorId}'>${aut.firstName} ${aut.lastName}</form:option>
 
-                                                </c:forEach>
-                                        </form:select><input type="button" value="Add" onclick="add()"/></td>
+                                            </c:forEach>
+                                        </form:select>
 
 
                                 </tr>
@@ -142,13 +142,28 @@
 
                                 <tr>
                                     <td>Price : </td>
-                                    <td><form:input path="Title" /></td>
+                                    <td><form:input path="price" /></td>
 
                                 </tr>
 
                                 <tr>
+                                    <td>Allowed for Reservation : </td>
+                                    <td><form:select  path="allowedForReservation">
+                                            <form:option value="0"/>Pls select one
+
+                                            <form:option value='1'>Yes</form:option>
+                                            <form:option value='0'>No</form:option>
+
+                                        </form:select>
+                                    </td>
+                                        
+                                        
+                                       
+                                </tr>
+
+                                <tr>
                                     <td><input type="submit" value="Add"></td>
-                                    <td><input type="button" value="Cancel"></td>
+                                    <td><input type="submit" value="Cancel"></td>
 
                                 </tr>
 
