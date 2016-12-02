@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class Category implements Serializable{
     private long categoryId;
     private String description;
-    private int icon;
+    private Icon icon;
 
     /**
      * @return the categoryId
@@ -48,14 +48,14 @@ public class Category implements Serializable{
     /**
      * @return the icon
      */
-    public int getIcon() {
+    public Icon getIcon() {
         return icon;
     }
 
     /**
      * @param icon the icon to set
      */
-    public void setIcon(int icon) {
+    public void setIcon(Icon icon) {
         this.icon = icon;
     }
 }

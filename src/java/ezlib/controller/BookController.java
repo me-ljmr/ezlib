@@ -5,10 +5,8 @@
  */
 package ezlib.controller;
 
-import ezlib.beans.Author;
 import ezlib.beans.Book;
-import ezlib.beans.Category;
-import ezlib.beans.Publisher;
+import ezlib.beans.*;
 import ezlib.data.DbQueries;
 import ezlib.exception.EZException;
 import java.util.List;

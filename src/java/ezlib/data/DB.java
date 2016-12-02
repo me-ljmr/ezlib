@@ -5,6 +5,7 @@
  */
 package ezlib.data;
 
+import ezlib.exception.EZException;
 import javax.sql.*;
 import java.sql.*;
 import javax.naming.*; 
@@ -18,11 +19,24 @@ public class DB {
  
     private static DataSource ds;
      
-    public static Connection getConnection() throws SQLException, NamingException{
-        Context ctx = new InitialContext(); 
-        ds = (DataSource) ctx.lookup("jdbc/myDatasource");
-          
-        return ds.getConnection("n01128805","oracle");
+    public static Connection getConnection() throws EZException{
+        try{
+            Context ctx = new InitialContext(); 
+            ds = (DataSource) ctx.lookup("jdbc/myDatasource");
+        }catch(NamingException nex){
+            throw new EZException(nex.getMessage());
+        }
+        finally{
+            try{
+                return ds.getConnection("n01128805","oracle");
+            }catch(SQLException ex){
+                throw new EZException(ex.getMessage());
+            }
+        }
+        
     } 
+    public static void destroy(){
+         ds = null;
+    }
     
 }
