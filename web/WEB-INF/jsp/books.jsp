@@ -39,7 +39,9 @@
 
                         </tr>
                         <c:forEach items="${books}" var="book"> 
-                            <tr ><td>${book.ISBN}</td>
+                            <tr >
+                                <td>&nbsp;</td>
+                                <td>${book.ISBN}</td>
                                 <td>${book.title}</td>
                             <td>${book.description}</td>
                             <td>${book.coverImage}</td>

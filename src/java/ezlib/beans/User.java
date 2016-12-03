@@ -16,10 +16,12 @@ public class User {
     private String lastName;
     private String email;
     private String password;
-    private char gender;  
+    private String gender;  
     private int status;
-    private String profileImageUrl;
-
+    private String profilePicUrl;
+    
+    
+    
     /**
      * @return the userId
      */
@@ -93,14 +95,14 @@ public class User {
     /**
      * @return the gender
      */
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
     /**
      * @param gender the gender to set
      */
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -121,15 +123,15 @@ public class User {
     /**
      * @return the profileImageUrl
      */
-    public String getProfileImageUrl() {
-        return profileImageUrl;
+    public String getProfilePicUrl() {
+        return profilePicUrl;
     }
 
     /**
      * @param profileImageUrl the profileImageUrl to set
      */
-    public void setProfileImageUrl(String profileImageUrl) {
-        this.profileImageUrl = profileImageUrl;
+    public void setProfilePicUrl(String profilePicUrl) {
+        this.profilePicUrl = profilePicUrl;
     }
     
 }

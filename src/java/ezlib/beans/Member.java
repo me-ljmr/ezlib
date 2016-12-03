@@ -16,6 +16,16 @@ public class Member extends User{
      private String address;
      private String postalCode; 
      private double balance;
+     
+     private int libraryCardNumber;
+private String verficationStatus;
+private String confirmationCode;
+
+
+
+
+
+
 
     /**
      * @return the memberId
@@ -85,6 +95,48 @@ public class Member extends User{
      */
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    /**
+     * @return the libraryCardNumber
+     */
+    public int getLibraryCardNumber() {
+        return libraryCardNumber;
+    }
+
+    /**
+     * @param libraryCardNumber the libraryCardNumber to set
+     */
+    public void setLibraryCardNumber(int libraryCardNumber) {
+        this.libraryCardNumber = libraryCardNumber;
+    }
+
+    /**
+     * @return the verficationStatus
+     */
+    public String getVerficationStatus() {
+        return verficationStatus;
+    }
+
+    /**
+     * @param verficationStatus the verficationStatus to set
+     */
+    public void setVerficationStatus(String verficationStatus) {
+        this.verficationStatus = verficationStatus;
+    }
+
+    /**
+     * @return the confirmationCode
+     */
+    public String getConfirmationCode() {
+        return confirmationCode;
+    }
+
+    /**
+     * @param confirmationCode the confirmationCode to set
+     */
+    public void setConfirmationCode(String confirmationCode) {
+        this.confirmationCode = confirmationCode;
     }
      
 }
