@@ -1,6 +1,7 @@
 package ezlib.beans;
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Book {
     private int pages;
     private ArrayList<Tag> tags;
     private String bookType;
-    
+    private File file;
     private Long categoryId;
     private Long publisherId;
     private List<Long> authorId;
@@ -203,6 +204,20 @@ public class Book {
      */
     public void setBookType(String bookType) {
         this.bookType = bookType;
+    }
+
+    /**
+     * @return the file
+     */
+    public File getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(File file) {
+        this.file = file;
     }
     
     

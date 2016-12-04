@@ -17,6 +17,7 @@ import ezlib.exception.EZException;
 import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -67,6 +68,51 @@ public class BookController {
 
         return modelandview;
     }
+    
+     
+    
+    @RequestMapping("/book/{isbn}")
+    public ModelAndView detail(@PathVariable String isbn) throws EZException{
+         
+        
+         
+         bdao = new BookDAO(DB.getConnection());
+        pdao = new PublisherDAO(DB.getConnection());
+        adao = new AuthorDAO(DB.getConnection());
+        cdao = new CategoryDAO(DB.getConnection());
+        ModelAndView modelandview = new ModelAndView("book");
+
+       
+       Book book = bdao.getBook(isbn);
+        List<Category> cats = cdao.getCategories();
+        List<Publisher> pubs = pdao.getPublishers();
+        List<Author> aut = adao.getAuthors();
+
+        modelandview.addObject("updateBookCommand", book);
+
+        modelandview.addObject("cats", cats);
+        modelandview.addObject("pubs", pubs);
+        modelandview.addObject("aut", aut);
+        
+        System.out.println("in book deyails");
+         
+        return modelandview; 
+    } 
+    
+    @RequestMapping(value="/updateBook", method=RequestMethod.POST)
+    public ModelAndView update(@ModelAttribute("updateBookCommand")Book book) throws EZException{
+       System.out.println("in   )))))update book");
+        bdao = new BookDAO(DB.getConnection());
+ 
+        try{
+            bdao.updateBook(book);
+         }catch(EZException ex){
+             
+         }
+        return new ModelAndView("redirect:/books");
+    }
+    
+    
 
     @RequestMapping(value = "/saveBook", method = RequestMethod.POST)
     public ModelAndView insertBook(@ModelAttribute("addBookCommand") Book book) throws EZException {

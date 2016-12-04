@@ -3,24 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/books.jsp</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/beans/Member.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/categories.jsp</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/controller/CategoryController.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/authors.jsp</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/beans/User.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/addBook.jsp</file>
             <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/controller/BookController.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/controller/LoginUser.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/data/CategoryDAO.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/author.jsp</file>
+            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/addMember.jsp</file>
+            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/books.jsp</file>
             <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/data/BookDAO.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/login.jsp</file>
             <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/beans/Book.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/controller/MemberController.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/controller/LoginController.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/src/java/ezlib/data/DbQueries.java</file>
-            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/members.jsp</file>
+            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/category.jsp</file>
+            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/authors.jsp</file>
+            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/book.jsp</file>
+            <file>file:/Users/SAUMIL/Documents/ezlib/web/WEB-INF/jsp/addBook.jsp</file>
         </group>
     </open-files>
 </project-private>

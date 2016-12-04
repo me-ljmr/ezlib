@@ -20,7 +20,7 @@
             <div class="wrapper">
                 <%@include file="header.jsp" %>
                 <main>
-                    <a href="category/add">Create New</a>
+                    <a href="/addBook">Create New</a>
                    
 
                     <table>
@@ -53,6 +53,11 @@
                             <td>${book.categoryId}</td>
                             <td>${book.bookType}</td>
                             <td>${book.allowedForReservation}</td>
+                            <td> <form:form action="book/${book.ISBN}" method="get" commandName="books">
+
+                                <input type="submit" value="Modify"   />
+
+                            </form:form></td>
 
                             </tr>
 

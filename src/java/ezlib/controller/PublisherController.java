@@ -43,25 +43,28 @@ public class PublisherController {
     public ModelAndView add(){
          
         Publisher pub = new Publisher();
-        return (new ModelAndView("publisher")).addObject("publisherForm",pub);
+        return (new ModelAndView("addPublisher")).addObject("publisherForm",pub);
     }
     @RequestMapping("/publisher/{id}")
     public ModelAndView detail(@PathVariable int id){
          Publisher pub = pdao.getPublisher(id);
-         return (new ModelAndView("publisher")).addObject("pub",pub);
+         return (new ModelAndView("publisher")).addObject("publisherForm",pub);
          
     } 
-    @RequestMapping(value="/updatePublisher", method=RequestMethod.POST)
-    public String update(@ModelAttribute("publisherForm")Publisher pub){
-        dbq = null;
-        return "test";
+    @RequestMapping(value="/publisher/update", method=RequestMethod.POST)
+    public ModelAndView update(@ModelAttribute("pub")Publisher pub){
+          try{
+            pdao.updatePublisher(pub);
+         }catch(EZException ex){
+             
+         }
+        return new ModelAndView("redirect:/publishers");
     }
     @RequestMapping(value="/publisher/save", method=RequestMethod.POST)
     public ModelAndView save(@ModelAttribute("publisherForm")Publisher pub){
-        dbq = null;
-         dbq = new DbQueries();
+        
          try{
-            dbq.savePublisher(pub);
+            pdao.savePublisher(pub);
          }catch(EZException ex){
              
          }

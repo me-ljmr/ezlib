@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="row">
-                                <form:form action="update" method="post" commandName="publisherForm">
+                                <form:form action="save" method="post" commandName="publisherForm">
                                     <table>
                                         <tr><th>Publisher Name : </th>
                                             <td>

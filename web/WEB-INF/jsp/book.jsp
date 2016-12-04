@@ -27,17 +27,15 @@
                     <div>Add New Book</div></div>
 
                 <div class="main" >
-                    <form:form method="post" action="saveBook" commandName="addBookCommand"   >
+                    <form:form method="post" action="updateBook" commandName="updateBookCommand"   >
 
 
                         <center>
                             <table >
+                               
                                 <tr>
-                                    <td>ISBN : </td>
-                                    <td><form:input  path="ISBN"/></td>
-
-                                </tr>
-                                <tr>
+                                       <form:hidden path="ISBN"></form:hidden>
+                                             
                                     <td>Title : </td>
                                     <td><form:input path="Title" /></td>
 
@@ -53,8 +51,7 @@
                                     <td>Category</td>
                                     <td><form:select path="categoryId"  >
 
-                                            <form:option value="dropdown"/>Pls select one
-
+                                        
                                             <c:forEach items= "${cats}" var="cats">
                                                 <form:option  value='${cats.categoryId}'>${cats.description}</form:option>
 
@@ -75,8 +72,7 @@
                                     <td>Publisher</td>
 
                                     <td><form:select  path="publisherId" >
-                                            <form:option value="dropdown"/>Pls select one
-
+                                          
                                             <c:forEach items= "${pubs}" var="pubs">
                                                 <form:option value='${pubs.publisherId}'>${pubs.publisherName}</form:option>
 
@@ -94,8 +90,7 @@
                                 <tr>
                                     <td>Author Name</td>
                                     <td><form:select multiple="multiple" path="authorId">
-                                            <form:option value="dropdown"/>Pls select one
-
+                                          
                                             <c:forEach items= "${aut}" var="aut">
                                                 <form:option value='${aut.authorId}'>${aut.firstName} ${aut.lastName}</form:option>
 
@@ -104,10 +99,7 @@
 
 
                                 </tr>
-                                <tr>
-                                    <td><span id="fooBar"></span></td>
-
-                                </tr>
+                                
 
                                 <tr>
                                     <td>Pages : </td>
