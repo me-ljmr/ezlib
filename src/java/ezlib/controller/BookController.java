@@ -99,7 +99,7 @@ public class BookController {
         return modelandview; 
     } 
     
-    @RequestMapping(value="/updateBook", method=RequestMethod.POST)
+    @RequestMapping(value="/book/updateBook", method=RequestMethod.POST)
     public ModelAndView update(@ModelAttribute("updateBookCommand")Book book) throws EZException{
        System.out.println("in   )))))update book");
         bdao = new BookDAO(DB.getConnection());
